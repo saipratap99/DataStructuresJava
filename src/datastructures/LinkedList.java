@@ -82,7 +82,20 @@ public class LinkedList {
             n.next = n.next.next;
         }
     }
-
+    
+    // gets size of the list
+    public int size(){
+        int len = 0;
+        Node n = new Node();
+        n = head;
+        while(n.next != null)
+        {
+            n = n.next;
+            len++;
+        }
+        return ++len;
+    }
+    
     // show all the values
     public void show() {
         Node n = head;
