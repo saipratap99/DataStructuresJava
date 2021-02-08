@@ -34,5 +34,27 @@ public class LinkedListAdd {
         while(li.hasNext()){
             System.out.println(li.next());
         }
+        
+        
+        // removing list elements
+        
+        // remove all the list items
+        
+        dll.removeAll(list);
+        System.out.println("\nAfter using removeall"+dll);
+        
+        dll.removeFirst();
+        dll.remove("Burpees");
+        System.out.println("\nAfter using remove and removeFirst:"+dll);
+        
+        dll.add("Streching");
+        dll.add("Streching");
+        dll.add("Streching");
+        dll.add("Streching");
+        
+        dll.removeFirstOccurrence("Streching");
+        dll.removeLastOccurrence("Streching");
+        System.out.println("\nAfter removing first last occurences:"+dll);
+        
     }
 }
