@@ -2,7 +2,8 @@ package Collections.Sets;
 import java.util.*;
 
 // Sets allow only distinct elements
-// The elemenets will not follow the order of insertion
+// In HashSet the elemenets will not follow the order of insertion
+// In LinkedHashSet the elemenets follows the order of insertion
 // Ieterator is used to traverse
 public class HashSet1 {
     public static void main(String[] args){
