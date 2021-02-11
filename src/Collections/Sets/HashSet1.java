@@ -11,12 +11,15 @@ public class HashSet1 {
         set.add("Orange");
         set.add("Mango");
         set.add("Grapes");
+        // It will accept null values
+        set.add(null);
+        
         System.out.println("Set: " + set);
         ArrayList<String> list = new ArrayList<>();
         
         list.add("Kiwi");
         list.add("Banana");
-        
+      
         set.addAll(list);
         System.out.println("After adding arrayList list -> Set: " + set);
         set.remove("Kiwi");
