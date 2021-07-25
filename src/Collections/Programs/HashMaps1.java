@@ -5,6 +5,7 @@ package Collections.Programs;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 
 // used for search , update, delete on basis of key
 // it doent allow null keys but allows null values
@@ -35,6 +36,16 @@ public class HashMaps1 {
         while(iter.hasNext()){
             String key = iter.next();
             System.out.println(key + ": " + map.get(key));
+        }
+        
+        
+        System.out.println("Using Iterator set and entryset: ");
+        Set s = map.entrySet();
+        Iterator iter2 = s.iterator();
+        while (iter2.hasNext()) {
+            Map.Entry<String,Integer> e = (Map.Entry<String,Integer>)iter2.next();
+            System.out.println(e.getKey()+": " + e.getValue());
+            
         }
     }
 }
