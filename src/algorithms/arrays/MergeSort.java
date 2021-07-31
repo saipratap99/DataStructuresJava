@@ -34,8 +34,8 @@ public class MergeSort {
             larr[i] = arr[i];
         for(int i=mid;i<n;i++)
             rarr[i-mid] = arr[i];
-//        System.out.println("larr: " + Arrays.toString(larr));
-//        System.out.println("rarr: " + Arrays.toString(rarr));
+        System.out.println("larr: " + Arrays.toString(larr));
+        System.out.println("rarr: " + Arrays.toString(rarr));
         larr = mergesort(larr);
         rarr = mergesort(rarr);
         arr = merge(larr,rarr);
@@ -43,8 +43,8 @@ public class MergeSort {
     }
     
     public static int[] merge(int[] larr,int[] rarr){
-        System.out.println("larr: " + Arrays.toString(larr));
-        System.out.println("rarr: " + Arrays.toString(rarr));
+//        System.out.println("larr: " + Arrays.toString(larr));
+//        System.out.println("rarr: " + Arrays.toString(rarr));
         int l = larr.length,r = rarr.length;
         int arr[] = new int[l+r];
         int i = 0,j=0,k=0;
