@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Collections.Programs;
+package algorithms.arrays;
 
 /**
  *
  * @author DELL
  */
-public class NewClass {
+public class QuickSort {
     
 }

@@ -5,11 +5,12 @@
  */
 package algorithms.arrays;
 
-// Inplace
+// not in place
 // stable sort 
 // Divide and conquer
 // Recursive
 // O(nlogn)
+// space O(n)
 
 
 import java.util.*;
