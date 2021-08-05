@@ -23,6 +23,8 @@ public class BinarySearchTreeTest {
         
         tree.inorder();
         tree.preorder();
+        BinaryTreeNode node = tree.binarySearch(0);
+        System.out.println("Binary search: " + (node != null ? node.data : "Not found"));
     }
     
 }

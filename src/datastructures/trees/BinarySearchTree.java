@@ -20,6 +20,12 @@ public class BinarySearchTree {
     public void insert(int data){
         root = insertNode(root, data);
     }
+    
+    public BinaryTreeNode binarySearch(int data){
+        return searchNode(this.root, data);
+    }
+            
+    
     // insert node
     public BinaryTreeNode insertNode(BinaryTreeNode root,int data){
         BinaryTreeNode binaryTreeNode = new BinaryTreeNode(data);
@@ -31,9 +37,20 @@ public class BinarySearchTree {
         } else {
             root.rightNode = insertNode(root.rightNode, data);
         }
-        return root;
+        return root;       
+    }
+    
+    // Binary search
+    public BinaryTreeNode searchNode(BinaryTreeNode root,int data){
+        if(root == null || root.data == data)
+            return root;
+        if(data <= root.data)
+            return searchNode(root.leftNode,data);
+        else
+            return searchNode(root.rightNode,data);
             
     }
+    
     
     /******** depth traversal *****************/
     public void inorder(){
@@ -60,6 +77,7 @@ public class BinarySearchTree {
             preorderTraversal(root.rightNode);
         }
     }
+    
     
 }
 
