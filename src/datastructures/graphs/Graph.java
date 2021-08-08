@@ -1,5 +1,10 @@
 package datastructures.graphs;
 
+/**
+A graph can be represented by ordered pair of set of V vertices and set of E edges
+* G = (V,E) - representation of graph
+* 
+*/
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
