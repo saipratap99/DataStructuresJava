@@ -28,10 +28,33 @@ public class Graph<T> {
     
     public int getEdgesCount(boolean isBidrectinal){
         int count = 0;
-        for(T v:map.keySet())
-            count += map.get(v).size();
+        count = map.keySet().stream().map((v) -> map.get(v).size()).reduce(count, Integer::sum);
         if(isBidrectinal)
             count /= 2;
         return count;
+    }
+    
+    public boolean hasVertex(T v){
+        return map.containsKey(v);
+    }
+    
+    public boolean hasEdge(T source,T destination){
+        if(map.containsKey(source)){
+            return map.get(source).contains(destination);
+        }
+        return false;
+    }
+    
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        for(T v:map.keySet()){
+            sb.append(v.toString() + ": ");
+            for(T ed: map.get(v)){
+                sb.append(ed.toString() + " ");
+            }
+            sb.append("\n");
+        }
+        return sb.toString();
     }
 }
