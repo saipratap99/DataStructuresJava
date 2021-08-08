@@ -24,6 +24,10 @@ public class BinarySearchTree {
     public BinaryTreeNode binarySearch(int data){
         return searchNode(this.root, data);
     }
+    
+    public void delete(int data){
+//        deleteNode(root, data);
+    }
             
     
     // insert node
@@ -78,6 +82,28 @@ public class BinarySearchTree {
         }
     }
     
+//    public BinaryTreeNode deleteNode(BinaryTreeNode root,int data){
+//        // case 1 deleting the leaf nodes
+//        if(root != null)
+//            return null;
+//        if(data < root.data)
+//            return null;
+//        else if
+//                if(data <= root.data)
+//                    root.leftNode = deleteNode(root.leftNode,data);
+//                else
+//                    root.rightNode = deleteNode(root.rightNode, data);
+//            }
+//        }
+//        
+//        // case 2: deleting node with 1 child
+//        
+//        
+//        // case 3: deleting node with 2 children
+//        return root;
+//        
+//    }
+//    
     
 }
 
