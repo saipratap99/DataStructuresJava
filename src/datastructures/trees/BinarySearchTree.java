@@ -26,7 +26,7 @@ public class BinarySearchTree {
     }
     
     public void delete(int data){
-//        deleteNode(root, data);
+        root = deleteNode(root, data);
     }
             
     
@@ -82,28 +82,50 @@ public class BinarySearchTree {
         }
     }
     
-//    public BinaryTreeNode deleteNode(BinaryTreeNode root,int data){
-//        // case 1 deleting the leaf nodes
-//        if(root != null)
-//            return null;
-//        if(data < root.data)
-//            return null;
-//        else if
-//                if(data <= root.data)
-//                    root.leftNode = deleteNode(root.leftNode,data);
-//                else
-//                    root.rightNode = deleteNode(root.rightNode, data);
-//            }
-//        }
-//        
-//        // case 2: deleting node with 1 child
-//        
-//        
-//        // case 3: deleting node with 2 children
-//        return root;
-//        
-//    }
-//    
+    
+    // deteling a node
+    // Case 1: deleting the leaf node
+    // Case 2: deleting the node with 1 child
+    // case 3: deleting the node with 2 children
+    
+    public BinaryTreeNode deleteNode(BinaryTreeNode root,int data){
+        // case 1 deleting the leaf nodes
+        if(root == null)
+            return null;
+        if(root.data == data && root.leftNode == null && root.rightNode == null)
+            return null;
+        
+        // case 2: deleting node with 1 child
+        else if(root.data == data && (root.leftNode == null || root.rightNode == null)){
+            if(root.leftNode != null)
+                return root.leftNode;
+            else
+                return root.rightNode;
+        }
+        
+        // case 3: deleting the node with 2 children
+        else if(root.data == data){
+            root.data = minValue(root.rightNode);
+            root.rightNode = deleteNode(root.rightNode, root.data);
+        }
+        
+        
+        // case 3: deleting node with 2 children
+        if(data <= root.data)
+            root.leftNode = deleteNode(root.leftNode,data);
+        else
+            root.rightNode = deleteNode(root.rightNode, data);
+        return root;
+    }
+
+    public int minValue(BinaryTreeNode root) {
+        if(root.leftNode == null)
+            return root.data;
+        return minValue(root.leftNode);
+    }
+        
+ 
+    
     
 }
 

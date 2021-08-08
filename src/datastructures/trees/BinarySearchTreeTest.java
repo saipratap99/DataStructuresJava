@@ -13,18 +13,33 @@ public class BinarySearchTreeTest {
     public static void main(String[] args) {
         BinarySearchTree tree = new BinarySearchTree();
         
-        tree.insert(10);
-        tree.insert(5);
-        tree.insert(12);
-        tree.insert(16);
+        tree.insert(6);
         tree.insert(3);
-        tree.insert(11);
+        tree.insert(12);
+        tree.insert(1);
+        tree.insert(4);
         tree.insert(7);
+        tree.insert(9);
+        tree.insert(18);
+        tree.insert(20);
+        tree.insert(17);
+        tree.insert(15);
         
         tree.inorder();
         tree.preorder();
         BinaryTreeNode node = tree.binarySearch(0);
         System.out.println("Binary search: " + (node != null ? node.data : "Not found"));
+        
+        tree.delete(1);
+        System.out.println("Deleted leaf node:");
+        tree.inorder();
+        
+        tree.delete(12);
+        System.out.println("Deleted node with 2 children: ");
+        tree.inorder();
+        System.out.println(tree.minValue(tree.root.rightNode.rightNode));
+        
+        
     }
     
 }
