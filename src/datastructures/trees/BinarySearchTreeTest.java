@@ -25,20 +25,23 @@ public class BinarySearchTreeTest {
         tree.insert(17);
         tree.insert(15);
         
+        
+        System.out.println("In order: ");
         tree.inorder();
+        System.out.println("Pre order: ");
         tree.preorder();
+        System.out.println("Level order: ");
+        tree.levelOrder();
         BinaryTreeNode node = tree.binarySearch(0);
         System.out.println("Binary search: " + (node != null ? node.data : "Not found"));
         
         tree.delete(1);
-        System.out.println("Deleted leaf node:");
+        System.out.println("Deleted leaf node(1):");
         tree.inorder();
         
         tree.delete(12);
-        System.out.println("Deleted node with 2 children: ");
+        System.out.println("Deleted node with 2 children(12): ");
         tree.inorder();
-        System.out.println(tree.minValue(tree.root.rightNode.rightNode));
-        
         
     }
     

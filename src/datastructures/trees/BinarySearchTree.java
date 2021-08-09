@@ -5,6 +5,11 @@
  */
 package datastructures.trees;
 
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  *
  * @author DELL
@@ -124,8 +129,18 @@ public class BinarySearchTree {
         return minValue(root.leftNode);
     }
         
- 
-    
-    
+    public void levelOrder(){
+        BinaryTreeNode node = this.root;
+        Queue<BinaryTreeNode> que = new LinkedList<>();
+        que.add(node);
+        while(!que.isEmpty()){
+            if(que.peek().leftNode != null)
+                que.add(que.peek().leftNode);
+            if(que.peek().rightNode != null)
+                que.add(que.peek().rightNode);
+            System.out.print(que.poll().data + " ");
+        }
+        System.out.println();
+    } 
 }
 
