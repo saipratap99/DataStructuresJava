@@ -5,13 +5,18 @@
  */
 package datastructures.graphs;
 
+import java.awt.print.Book;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
 /**
  *
- * @author DELL
+ *  0  ---| 1
+ * | |  /
+ *  2  ---| 3  
+ *
+ *  1 pointing to 2
  */
 public class GraphTraversal {
     
@@ -45,6 +50,18 @@ public class GraphTraversal {
         System.out.println();
     }
     
+    
+    public void DFT(int v,boolean[] visited){
+        if(!visited[v]){
+            System.out.print(v + " ");
+            visited[v] = true;
+            for(Integer i:adj[v]){
+                DFT(i, visited);
+            }
+        }else
+            return;
+    }
+    
     public static void main(String[] args) {
         GraphTraversal gt = new GraphTraversal(4);
         
@@ -56,6 +73,7 @@ public class GraphTraversal {
         gt.addEdge(3, 3);
         
         gt.BFT(2); // start with node 2
+        gt.DFT(2, new boolean[4]); // starts with 2
         
         
     }

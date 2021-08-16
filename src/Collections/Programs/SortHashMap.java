@@ -7,13 +7,15 @@ import java.util.Map;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 // sort HashMap by keys
 // sort HashMap by Values
 public class SortHashMap {
     public static void main(String[] args) {
     // sort by keys
-        Map<String,Integer> freq = new HashMap<>();
+        Map<String,Integer> freq = new LinkedHashMap<>();
         
         // adding key value pairs
         freq.put("hello",3);
@@ -37,12 +39,15 @@ public class SortHashMap {
         }
         
         
-    // sort by values
-//        TreeMap<String,Integer> sortedByValues = new TreeMap<>(freq);
-//        Collections.sort(sortedByValues, new Comparator<Object>(){
-//            public int compare(Object o1,Object o2){
-//                return ((Map.Entry<String,Integer>) o1).getValue() - ((Map.Entry<String,Integer>) o2).getValue();
-//            }
-//        });
+        // sort by values
+        List<Map.Entry<String,Integer>> entryset = new LinkedList<>(freq.entrySet());
+        Collections.sort(entryset,(Map.Entry<String,Integer> o1,Map.Entry<String,Integer> o2)->{return o1.getValue() - o2.getValue();});
+        Map<String,Integer> sortedByValues = new LinkedHashMap<>();
+        entryset.forEach((e)->{sortedByValues.put(e.getKey(), e.getValue());});
+        
+        System.out.println("After sorting by values: ");
+        for(Map.Entry<String,Integer> element: sortedByValues.entrySet()){
+            System.out.println(element.getKey() + ": " + element.getValue());
+        }
     }
 }
